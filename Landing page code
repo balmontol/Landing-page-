@@ -1,0 +1,310 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Modern SaaS Landing Page
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #001F3F 0%, #F5F7FA 100%);
+      color: #0f172a;
+    }
+    /* Glow and shadow effects */
+    .btn-glow {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+    }
+    .btn-glow:hover,
+    .btn-glow:focus {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+      transform: translateY(-2px);
+    }
+    .card-glow {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+      border-radius: 1rem;
+      background: white;
+    }
+    .card-glow:hover,
+    .card-glow:focus-within {
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+      transform: scale(1.03);
+    }
+    /* Wave dividers */
+    .wave-top svg,
+    .wave-bottom svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+    }
+    /* Sticky navbar */
+    nav {
+      backdrop-filter: saturate(180%) blur(20px);
+      background-color: rgba(255 255 255 / 0.85);
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+      z-index: 50;
+    }
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .slide-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .slide-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .wave-top svg,
+      .wave-bottom svg {
+        height: 60px;
+      }
+    }
+  </style>
+ </head>
+ <body class="antialiased">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full">
+   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between h-16">
+    <a class="text-2xl font-bold text-blue-900 select-none" href="#hero">
+     BlueWave
+    </a>
+    <ul class="hidden md:flex space-x-10 text-blue-900 font-semibold">
+     <li>
+      <a class="hover:text-indigo-600 transition" href="#features">
+       Features
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-600 transition" href="#about">
+       About
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-600 transition" href="#contact">
+       Contact
+      </a>
+     </li>
+    </ul>
+    <a class="hidden md:inline-block btn-glow bg-white text-indigo-600 font-semibold px-5 py-2 rounded-lg shadow-md hover:shadow-lg transition" href="login.html">
+     Log in
+    </a>
+    <button aria-label="Toggle menu" class="md:hidden text-blue-900 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <div class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
+    <ul class="flex flex-col space-y-4 p-6 text-indigo-700 font-semibold">
+     <li>
+      <a class="block hover:text-indigo-600 transition" href="#features">
+       Features
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-600 transition" href="#about">
+       About
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-600 transition" href="https://wa.me/6281246510125">
+       Contact
+      </a>
+     </li>
+     <li>
+      <a class="block btn-glow bg-indigo-600 text-white text-center rounded-lg py-2 shadow-md hover:shadow-lg transition" href="login.html">
+       Log in
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20 md:pt-28" id="hero">
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-8 slide-in-left">
+     <h1 class="text-5xl sm:text-6xl font-extrabold text-white leading-tight max-w-xl drop-shadow-lg">
+      Empower Your Business with
+      <span class="text-indigo-400">
+       BlueWave
+      </span>
+     </h1>
+     <p class="text-lg sm:text-xl text-indigo-100 max-w-lg drop-shadow-md">
+      The all-in-one digital platform designed to streamline your workflow, boost productivity, and accelerate growth.
+     </p>
+     <a class="inline-block btn-glow bg-white text-indigo-600 font-semibold px-8 py-3 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1" href="#cta">
+      Get Started
+     </a>
+    </div>
+    <div class="slide-in-right flex justify-center">
+     <div class="card-glow p-6 max-w-md rounded-xl overflow-hidden bg-white">
+      <img alt="" class="rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105" height="400" loading="lazy" src="hai.png" width="600"/>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Wave Divider -->
+  <div class="wave-bottom">
+   <svg fill="none" preserveaspectratio="none" viewbox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 80L1440 0V80H0Z" fill="#FFFFFF">
+    </path>
+   </svg>
+  </div>
+  <!-- Features Section -->
+  <section class="bg-white py-20 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto" id="features">
+   <h2 class="text-4xl font-extrabold text-indigo-900 text-center mb-16 fade-in">
+    Why Choose BlueWave?
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <article class="card-glow p-8 flex flex-col items-center text-center fade-in cursor-pointer focus:outline-none" tabindex="0">
+     <img alt="I" class="mb-6 w-24 h-24" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/223ff787-6ab3-4470-3c72-3a6087802fe2.jpg" width="120"/>
+     <h3 class="text-2xl font-semibold text-indigo-700 mb-3">
+      Seamless Automation
+     </h3>
+     <p class="text-indigo-600 text-lg leading-relaxed">
+      Automate repetitive tasks and workflows to save time and reduce errors, letting you focus on what matters most.
+     </p>
+    </article>
+    <article class="card-glow p-8 flex flex-col items-center text-center fade-in cursor-pointer focus:outline-none" tabindex="0">
+     <img alt="Icon representing analytics with bar charts and magnifying glass in blue and purple colors" class="mb-6 w-24 h-24" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/67e05cf2-9569-4fe6-9410-a926090ce09d.jpg" width="120"/>
+     <h3 class="text-2xl font-semibold text-indigo-700 mb-3">
+      Insightful Analytics
+     </h3>
+     <p class="text-indigo-600 text-lg leading-relaxed">
+      Gain real-time insights with powerful analytics tools that help you make data-driven decisions confidently.
+     </p>
+    </article>
+    <article class="card-glow p-8 flex flex-col items-center text-center fade-in cursor-pointer focus:outline-none" tabindex="0">
+     <img alt="Icon representing collaboration with people connected by lines in blue and purple shades" class="mb-6 w-24 h-24" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f2414822-67a8-4ea4-5b74-f57f2e469f08.jpg" width="120"/>
+     <h3 class="text-2xl font-semibold text-indigo-700 mb-3">
+      Team Collaboration
+     </h3>
+     <p class="text-indigo-600 text-lg leading-relaxed">
+      Collaborate effortlessly with your team using integrated communication and project management features.
+     </p>
+    </article>
+   </div>
+  </section>
+  <!-- Wave Divider -->
+  <div class="wave-top">
+   <svg fill="none" preserveaspectratio="none" viewbox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0L1440 80V0H0Z" fill="#001F3F">
+    </path>
+   </svg>
+  </div>
+  <!-- About Section -->
+  <section class="bg-gradient-to-b from-[#001F3F] to-[#F5F7FA] py-20 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto" id="about">
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div class="slide-in-left text-white max-w-xl mx-auto md:mx-0">
+     <h2 class="text-4xl font-extrabold mb-6">
+      Built for Modern Businesses
+     </h2>
+     <p class="text-lg leading-relaxed mb-6">
+      BlueWave is crafted with the latest technology and design principles to ensure your business stays ahead in a competitive market.
+     </p>
+     <p class="text-lg leading-relaxed">
+      Our platform is scalable, secure, and easy to use, providing you with the tools you need to grow without limits.
+     </p>
+    </div>
+    <div class="slide-in-right flex justify-center">
+     <div class="card-glow p-6 rounded-xl bg-white max-w-md shadow-lg">
+      <img alt="" class="rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105" height="400" loading="lazy" src="aneh.jpg" width="600"/>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Wave Divider -->
+  <div class="wave-bottom">
+   <svg fill="none" preserveaspectratio="none" viewbox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 80L1440 0V80H0Z" fill="#FFFFFF">
+    </path>
+   </svg>
+  </div>
+  <!-- Call to Action Section -->
+  <section class="bg-white py-20 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto text-center" id="cta">
+   <h2 class="text-4xl font-extrabold text-indigo-900 mb-6 fade-in">
+    Ready to Transform Your Workflow?
+   </h2>
+   <p class="text-indigo-700 text-lg max-w-2xl mx-auto mb-10 fade-in">
+    Join thousands of businesses already using BlueWave to innovate and grow. Start your free trial today and experience the difference.
+   </p>
+   <a class="inline-block btn-glow bg-indigo-600 text-white font-semibold px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 fade-in" href="terimakasih.html">
+    Start free trial
+   </a>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-indigo-900 text-indigo-200 py-10 px-6 sm:px-8 lg:px-12 text-center">
+   <p class="text-sm">
+    © 2025 BlueWave. This is just a demo website.
+   </p>
+  </footer>
+
+  <script>
+   // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Scroll animations
+    const faders = document.querySelectorAll('.fade-in');
+    const slidersLeft = document.querySelectorAll('.slide-in-left');
+    const slidersRight = document.querySelectorAll('.slide-in-right');
+
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+    slidersLeft.forEach(slider => {
+      appearOnScroll.observe(slider);
+    });
+    slidersRight.forEach(slider => {
+      appearOnScroll.observe(slider);
+    });
+  </script>
+ </body>
+</html>
